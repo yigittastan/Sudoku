@@ -11,14 +11,14 @@
 // }
 function contendFor() {
     const contentDiv = document.getElementById('content');
-    // Loop to create 9x9 grid
+    
     for (let i = 0; i < 9; i++) {
+        const shuffledArray = random([...contentNumber]); // Her satır için yeni rastgele dizilim
         for (let j = 0; j < 9; j++) {
             const newDiv = document.createElement('div');
-            const randomIndex = Math.floor(Math.random() * shuffledArray.length); // Random index to get values from shuffled array
-            newDiv.textContent = shuffledArray[randomIndex]; // Assign random value from shuffledArray
+            newDiv.classList.add('cell'); // Hücre sınıfı ekle
+            newDiv.textContent = shuffledArray[j]; // Sıralı rastgele sayı ekle
             contentDiv.appendChild(newDiv);
-            console.log("content div'ine yeni div eklendi");
         }
     }
 }
