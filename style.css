@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+/* Top section styling */
+.top {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error,
+.score {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Content area where the grid will be displayed */
+.content {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    gap: 2px;
+    border: 3px solid #333;
+    background-color: #fff;
+    padding: 10px;
+}
+
+/* Styling for each individual cell in the grid */
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+/* Styling for the bold grid lines */
+.content .cell:nth-child(3n) {
+    border-right: 2px solid #333;
+}
+
+.content .cell:nth-child(27n+1),
+.content .cell:nth-child(27n+9) {
+    border-bottom: 2px solid #333;
+}
+
+/* Styling for the outer edges of the grid */
+.content .cell:nth-child(9n+1),
+.content .cell:nth-child(9n) {
+    border-left: 2px solid #333;
+}
